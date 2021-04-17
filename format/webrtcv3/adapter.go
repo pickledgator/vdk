@@ -145,7 +145,7 @@ func (element *Muxer) WriteHeader(streams []av.CodecData, sdp64 string) (string,
 	})
 	peerConnection.OnDataChannel(func(d *webrtc.DataChannel) {
 		d.OnMessage(func(msg webrtc.DataChannelMessage) {
-			element.ClientACK.Reset(20 * time.Second)
+			element.ClientACK.Reset(30 * time.Second)
 		})
 	})
 
